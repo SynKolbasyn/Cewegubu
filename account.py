@@ -1,25 +1,6 @@
-import server
-
-def end():
-    print("\n" + "-" * 100 + "\n")
-
-def register():
-    print("Вы успешно зарегестрировались")
-    end()
-
-def login():
-    print("Вы успешно вошли в аккаунт")
-    end()
-
-def help():
-    print("Тут список всех команд")
-    end()
-
-def exit():
-    print("Игра овер")
-    end()
-    return True
-
-def unknown():
-    print("Такой команды не существует, используйте help")
-    end()
+class Server:
+    def __init__(self, email, password, nickName, money):
+        self.email = email
+        self.password = password
+        self.nickName = nickName
+        self.money = money
