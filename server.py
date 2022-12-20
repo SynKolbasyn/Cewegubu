@@ -4,10 +4,10 @@ import time
 message_received = False
 connected = False
 
-brokerAdress = "mqtt.by"
-port = 1883
-user = "synkolbasyn"
-password = "fhyeonco"
+brokerAdress = ""
+port =
+user = ""
+password = ""
 topic_save = "/user/synkolbasyn/gamedata"
 topic_for_command = "/user/synkolbasyn/command"
 topic_from_server = "/user/synkolbasyn/fromdata"

@@ -2,11 +2,11 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "AKADO58";
-const char* password = "43748005";
-const char* mqtt_server = "mqtt.by";
-const char* mqtt_name = "synkolbasyn";
-const char* mqtt_pass = "fhyeonco";
+const char* ssid = "";
+const char* password = "";
+const char* mqtt_server = "";
+const char* mqtt_name = "";
+const char* mqtt_pass = "";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -36,6 +36,8 @@ class Player {
     int getMoneyValue();
     int getId();
     String getPrivateTopic();
+    Player();
+    Player(String email, String password, String nickName, int money, int id);
 
   private:
     String _email;
@@ -45,6 +47,9 @@ class Player {
     int _id;
     String _privateTopic;
 };
+
+Player::Player() {}
+
 Player::Player(String email, String password, String nickName, int money, int id) {
   _email = email;
   _password = password;
@@ -77,7 +82,7 @@ String Player::getPrivateTopic() {
   return _privateTopic;
 }
 
-Player playersList[] = {};
+Player playersList[100];
 
 void saveToPlayersList(Player playerData) {
   playersList[numOfPlayers] = playerData;
